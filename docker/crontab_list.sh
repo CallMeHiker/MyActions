@@ -30,8 +30,6 @@
 20 0-23/3 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
 #东东电竞经理
 47 10 * * * node /scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
-#天天优惠大乐透
-25 6 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 #众筹许愿池
 20 12 * * * node /scripts/jd_wishingPool.js >> /scripts/logs/jd_wishingPool.log 2>&1
 #汪汪乐园
@@ -48,8 +46,6 @@
 0-59/30 * * * * node /scripts/jd_moneyTree_help.js >> /scripts/logs/jd_moneyTree_help.log 2>&1
 # MMdou
 21 9 * * * node /scripts/jd_MMdou.js >> /scripts/logs/jd_MMdou.log 2>&1
-# jd_opencard11
-21 1,8,15 * * * node /scripts/jd_opencard11.js >> /scripts/logs/jd_opencard11.log 2>&1
 #京喜领88元红包
 30 1,6,12,15,18 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #京喜首页签到
@@ -58,18 +54,15 @@
 30 8,9 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #女装盲盒
 54 9 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
-#粉丝互动
-34 6,18 * * * node /scripts/jd_fan.js >> /scripts/logs/jd_fan.log 2>&1
-# 荣耀换新季
-0 1 * * * node /scripts/jd_ryhxj.js >> /scripts/logs/jd_ryhxj.log 2>&1
-# 来电好物季
-10 1 * * * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
 # 京小鸽吾悦寄
 35 4,7 * * * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
-# 汽车生活季
-30 9,21 12-20 8 * node /scripts/jd_qcshj.js >> /scripts/logs/jd_qcshj.log 2>&1
 # 领卷中心签到
 15 10 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
+# 零食街
+15 0,12 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
+# 电脑配件抢京豆（一次性脚本）
+1 0 * * * node /scripts/jd_task1.js >> /scripts/logs/jd_task1.log 2>&1
+
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -97,8 +90,8 @@
 55 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京豆变动通知
 0 10 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
-# 京豆变动通知all
-0 21 * * * node /scripts/jd_bean_change_all.js >> /scripts/logs/jd_bean_change_all.log 2>&1
+# 京豆变动简洁版
+0 9 * * * node /scripts/jd_bean_change_clean.js >> /scripts/logs/jd_bean_change_clean.log 2>&1
 # 天天提鹅
 18 * * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 金融养猪
@@ -123,8 +116,6 @@
 10-20/5 12 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 # 微信小程序京东赚赚
 30 0,1 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
-# 京东汽车旅程赛点兑换金豆
-0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
 # 导到所有互助码
 47 7 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
 # 口袋书店
@@ -155,17 +146,13 @@
 10 13-20/1 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 京东摇一摇
 0 1,17 * * * node /scripts/jd_shake.js >> /scripts/logs/jd_shake.log 2>&1
-
+京东试用（默认注释，请配合取关脚本使用）
+10 0 * * *  node /scripts/jd_try_new.js >> /scripts/logs/jd_try_new.log 2>&1
 ##############默认注释活动##############
-# 京东试用（默认注释，请配合取关脚本使用）
-#10 0 * * *  node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
-# 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
-#20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
-# 监控crazyJoy分红
-# 10 7 * * * node /scripts/jd_crazy_joy_bonus.js >> /scripts/logs/jd_crazy_joy_bonus.log 2>&1
 # jd_cash_exchange
 # 0,1,2 0 * * * node /scripts/jd_cash_exchange.js >> /scripts/logs/jd_cash_exchange.log 2>&1
 # 京喜农场
 #0 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
-# 清空购物车
-#0 9 * * * node /scripts/jd_cleancart.js >> /scripts/logs/jd_cleancart.log 2>&1
+
+# jd_car_exchange
+#0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
